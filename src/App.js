@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import Formpage from './Components/Formpage';
 import './App.css';
-
+import Navbar  from './Components/Nav';
+import { Routes,Route } from 'react-router-dom';
+import Alldata from './Components/Alldata';
+import  Update  from './Components/Update';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+<Navbar></Navbar>
+    
+
+
+      <Routes>
+        <Route path="/" element={<Formpage></Formpage>}></Route>
+        <Route path='/Alldata' element={<Alldata></Alldata>}></Route>
+        <Route path='/edit/:id' element={<Update></Update>}></Route>
+
+      </Routes>
     </div>
   );
 }
